@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, InputBase, Toolbar, Typography, useTheme } from '@mui/material'
+import { alpha, AppBar, InputBase, Toolbar, Typography, useTheme } from '@mui/material'
 import { Search } from '@mui/icons-material'
 
 
@@ -8,7 +8,12 @@ const Navbar = () => {
   return (
     <div>
       <AppBar>
-        <Toolbar>
+        <Toolbar 
+        sx={{
+          display:"flex",
+          justifyContent:"space-between"
+        }}
+        >
           <Typography variant='h6'  
             sx={{
               display:"none",
@@ -30,8 +35,21 @@ const Navbar = () => {
               تاپ لرن
           </Typography>
 
-          <Search/>
-          <InputBase/>
+          <div 
+           style={{
+            display:"flex",
+            alignItems:"center",
+            backgroundColor:alpha(theme.palette.common.white,0.15),
+            "&:hover":{
+              backgroundColor:alpha(theme.palette.common.white,0.25),
+            },
+            borderRadius:(theme.shape.borderRadius)
+           }}
+          >
+            <Search/>
+            <InputBase placeholder="جستجو کنید"/>
+          </div>
+          آیکون
         </Toolbar>
       </AppBar>
      
