@@ -1,6 +1,6 @@
 import React from 'react'
-import { alpha, AppBar, InputBase, Toolbar, Typography, useTheme } from '@mui/material'
-import { Search } from '@mui/icons-material'
+import { alpha, AppBar, InputBase, Toolbar, Typography, useTheme, Badge } from '@mui/material'
+import { Search, Mail } from '@mui/icons-material'
 
 
 const Navbar = () => {
@@ -43,13 +43,28 @@ const Navbar = () => {
             "&:hover":{
               backgroundColor:alpha(theme.palette.common.white,0.25),
             },
-            borderRadius:(theme.shape.borderRadius)
+            borderRadius:(theme.shape.borderRadius),
+            width:"40%",
            }}
           >
             <Search/>
-            <InputBase placeholder="جستجو کنید"/>
+            <InputBase placeholder="جستجو کنید"
+              sx={{
+                color:"white",
+                marginRight:(theme.spacing(1.5))
+              }}
+            />
           </div>
-          آیکون
+          <div>
+          <Badge badgeContent={4} color="secondary"
+          >
+              <Mail color="action"
+                sx={{
+                  color:"white"
+                }}
+              />
+          </Badge>
+          </div>
         </Toolbar>
       </AppBar>
      
