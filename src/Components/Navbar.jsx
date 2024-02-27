@@ -1,18 +1,20 @@
 import React from 'react'
 import { alpha, AppBar, InputBase, Toolbar, Typography, useTheme, Badge, Avatar, Container, Box } from '@mui/material'
 import { Search, Mail, Notifications } from '@mui/icons-material'
+import { useState } from 'react'
 
 
 const Navbar = () => {
   const theme = useTheme()
+  const [open , setOpen] = useState(false)
   return (
     <div>
       <AppBar>
         <Toolbar 
-        sx={{
-          display:"flex",
-          justifyContent:"space-between"
-        }}
+          sx={{
+            display:"flex",
+            justifyContent:"space-between"
+          }}
         >
           <Typography variant='h6'  
             sx={{
@@ -24,6 +26,7 @@ const Navbar = () => {
           >
               وبلاگ تاپ لرن
           </Typography>
+          
           <Typography variant='h6'
             sx={{
               display:"block",
@@ -36,21 +39,22 @@ const Navbar = () => {
           </Typography>
 
           <Container
-          sx={{
-            display:"flex",
-            alignItems:"center",
-            backgroundColor:alpha(theme.palette.common.white,0.15),
-            "&:hover":{
-              backgroundColor:alpha(theme.palette.common.white,0.25),
-            },
-            borderRadius:"4px",
-            width:"40%",
-            [theme.breakpoints.down("sm")]:{
-              display:"none"
-            },
-           }}
+            sx={{
+              display:"flex",
+              alignItems:"center",
+              backgroundColor:alpha(theme.palette.common.white,0.15),
+              "&:hover":{
+                backgroundColor:alpha(theme.palette.common.white,0.25),
+              },
+              borderRadius:"4px",
+              width:"50%",
+              [theme.breakpoints.down("sm")]:{
+                display: (open ? "flex" : "none")
+              },
+            }}
           >
-          <Search/>
+          <Search
+          />
             <InputBase placeholder="جستجو کنید"
               sx={{
                 color:"white",
@@ -59,36 +63,54 @@ const Navbar = () => {
             />
           </Container>
           <Box 
-          sx={{
-            display:"flex",
-            alignItems:"center"
-          }}
+            sx={{
+              display:"flex",
+              alignItems:"center"
+            }}
           >
-          <Search
-           sx={{
-             marginLeft:(theme.spacing(2))
-           }}
+          <Search 
+            onClick ={()=>setOpen(true)}
+            sx={{
+              marginLeft:(theme.spacing(2)),
+                display: (open ? "none" : "flex")
+            }}
           />
-          <Badge badgeContent={4} color="secondary"
+          <Badge 
+            badgeContent={4} 
+            color="secondary"
+            sx={{
+              display: (open ? "none" : "flex")
+            }}
           >
               <Mail color="action"
                 sx={{
                   color:"white",
-                  marginLeft:(theme.spacing(2))
+                  marginLeft:(theme.spacing(2)),
                 }}
               />
           </Badge>
-          <Badge badgeContent={3} color="secondary"
+          <Badge 
+            badgeContent={3} 
+            color="secondary"
+            sx={{
+              display: (open ? "none" : "flex")
+            }}
           >
               <Notifications color="action"
                 sx={{
                   color:"white",
-                  marginLeft:(theme.spacing(2))
+                  marginLeft:(theme.spacing(2)),
                 }}
               />
           </Badge>
 
-          <Avatar alt="Cindy Baker" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwViW8fX3Gbj68tZ2XvH_PySnrpgiMsyBc6Gjq3ucmCPZoJjOQDmsVfv7B0A&s" />
+          <Avatar 
+            alt="Cindy Baker" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwViW8fX3Gbj68tZ2XvH_PySnrpgiMsyBc6Gjq3ucmCPZoJjOQDmsVfv7B0A&s" 
+            sx={{
+              display: (open ? "none" : "flex")
+            }}
+          />
           </Box>
         </Toolbar>
       </AppBar>
