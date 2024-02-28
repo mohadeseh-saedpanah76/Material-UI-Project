@@ -1,6 +1,6 @@
 import React from 'react'
 import { alpha, AppBar, InputBase, Toolbar, Typography, useTheme, Badge, Avatar, Container, Box } from '@mui/material'
-import { Search, Mail, Notifications } from '@mui/icons-material'
+import { Search, Mail, Notifications, Cancel } from '@mui/icons-material'
 import { useState } from 'react'
 
 
@@ -49,7 +49,8 @@ const Navbar = () => {
               borderRadius:"4px",
               width:"50%",
               [theme.breakpoints.down("sm")]:{
-                display: (open ? "flex" : "none")
+                display: (open ? "flex" : "none"),
+                width:"60%",
               },
             }}
           >
@@ -60,6 +61,15 @@ const Navbar = () => {
                 color:"white",
                 marginRight:(theme.spacing(1.5))
               }}
+            />
+
+            <Cancel 
+              sx={{
+                [theme.breakpoints.up("sm")]:{
+                  display: "none"
+                },
+              }}
+              onClick ={()=>setOpen(false)}
             />
           </Container>
           <Box 
@@ -72,7 +82,10 @@ const Navbar = () => {
             onClick ={()=>setOpen(true)}
             sx={{
               marginLeft:(theme.spacing(2)),
-                display: (open ? "none" : "flex")
+              display: (open ? "none" : "flex"),
+              [theme.breakpoints.up("sm")]:{
+                display: "none"
+              },
             }}
           />
           <Badge 
