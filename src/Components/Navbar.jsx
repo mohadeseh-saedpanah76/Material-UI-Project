@@ -59,7 +59,8 @@ const Navbar = () => {
             <InputBase placeholder="جستجو کنید"
               sx={{
                 color:"white",
-                marginRight:(theme.spacing(1.5))
+                marginRight:(theme.spacing(1.5)),
+                width:"100%"
               }}
             />
 
