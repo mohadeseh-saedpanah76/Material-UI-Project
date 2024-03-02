@@ -7,15 +7,34 @@ const Leftbar = () => {
   return (
    <Container
     sx={{
-      paddingTop:theme.spacing(10)
+      paddingTop:theme.spacing(10),
+      backgroundColor:theme.palette.primary.main,
+      height:"100vh",
+      color:"white"
     }}
    >
-    <div>
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
       <Home/>
-      <Typography>
+      <Typography
+        sx={{
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
         خانه
       </Typography>
-    </div>
+    </Container>
    </Container>
   )
 }

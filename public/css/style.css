@@ -12,5 +12,6 @@
 body{
     direction: rtl;
     text-align: right;
-    bor
+    margin:0;
+    padding:0
 }
