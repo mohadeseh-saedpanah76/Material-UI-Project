@@ -1,20 +1,336 @@
-import { Container, useTheme } from '@mui/material'
+import { Bookmark, ExitToApp, Home, List, Person, PhotoCamera, PlayCircleOutline, Settings, Storefront, TabletMac } from '@mui/icons-material'
+import { Container, Typography, useTheme } from '@mui/material'
 import React from 'react'
 
 const Rightbar = () => {
   const theme = useTheme()
   return (
+   <Container
+    sx={{
+      paddingTop:theme.spacing(10),
+      backgroundColor:theme.palette.primary.main,
+      height:"100vh",
+      color:"white",
+      [theme.breakpoints.up("sm")]: {
+        backgroundColor:"white",
+        color:"#555",
+        border:"1px solid #f8f8f8"
+      }
+    }}
+   >
     <Container
       sx={{
-        paddingTop:theme.spacing(10)
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
       }}
     >
-      <div>
-        ساید بار راست
-      </div>
+      <Home
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        خانه
+      </Typography>
     </Container>
-    
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <Person
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        دوستان
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <List
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        لیست‌ها
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <PhotoCamera
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        دوربین
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <PlayCircleOutline
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        ویدیو
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <TabletMac
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        اپ
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <Bookmark
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+       مجموعه‌ها
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <Storefront
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        بازار
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <Settings
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        تنظیمات
+      </Typography>
+    </Container>
+
+    <Container
+      sx={{
+        display:"flex",
+        alignItems:"center",
+        marginBottom:theme.spacing(4),
+        [theme.breakpoints.up("sm")]: {
+          marginBottom:theme.spacing(4),
+          cursor:"pointer"
+        }
+      }}
+    >
+      <ExitToApp
+        sx={{
+          marginLeft:theme.spacing(1),
+          [theme.breakpoints.up("sm")]:{
+            fontSize:"18px"
+          }
+        }}
+      />
+      <Typography
+        sx={{
+          fontWeight:"500",
+          [theme.breakpoints.down("sm")]:{
+            display:"none"
+          }
+        }}
+      >
+        خروج
+      </Typography>
+    </Container>
+
+   </Container>
   )
 }
 
 export default Rightbar
+

@@ -1,8 +1,8 @@
 import { Grid, useTheme } from "@mui/material";
 import Navbar from "./Components/Navbar";
 import Rightbar from "./Components/Rightbar"
-import Feed from "./Components/Feed"
 import Leftbar from "./Components/Leftbar";
+import Posts from "./Components/Posts";
 
 function App() {
   const theme = useTheme()
@@ -11,21 +11,21 @@ function App() {
      <Navbar/>
 
      <Grid container>
-      <Grid item sm={3}
+      <Grid item sm={2} xs={2}>
+        <Rightbar/>
+      </Grid>
+
+      <Grid item sm={7} xs={10}>
+        <Posts/>
+      </Grid>
+
+      <Grid item sm={3} 
         sx={{
           [theme.breakpoints.down("sm")]:{
             display:"none"
           }
         }}
       >
-        <Rightbar/>
-      </Grid>
-
-      <Grid item sm={7} xs={10}>
-        <Feed/>
-      </Grid>
-
-      <Grid item sm={2} xs={2}>
         <Leftbar/>
       </Grid>
      </Grid>
