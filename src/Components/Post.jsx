@@ -10,7 +10,7 @@ const Post = () => {
       >
         <CardActionArea>
           <CardMedia
-          sx={{height:"250px"
+          sx={{height:"250px",
                [theme.breakpoints.down("sm")]:{
                 height:"150px"
                }
