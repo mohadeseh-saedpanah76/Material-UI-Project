@@ -1,4 +1,4 @@
-import { Fab, Modal, Tooltip, Container, useTheme} from '@mui/material'
+import { Fab, Modal, Tooltip, Container, useTheme, TextField,MenuItem} from '@mui/material'
 import { Add as AddIcon } from '@mui/icons-material'
 import { useState } from 'react'
 
@@ -36,7 +36,34 @@ const Add = () => {
           }
          }}
         >
-          این مدال است
+         <form autoComplete='off'>
+         <div>
+         <TextField id="standard-basic" label="عنوان" variant="standard" style={{width:"100%"}}/>
+         </div>
+         <div>
+         <TextField 
+          id="outlined-multiline-static"
+          label="پیام شما"
+          multiline
+          rows={4}
+          defaultValue="داستان خودت رو بگو..."
+          variant="outlined" 
+          style={{width:"100%"}}
+          />
+          <TextField select label="نوع دسترسی">
+            <MenuItem value="public">
+              عمومی
+            </MenuItem>
+            <MenuItem value="private">
+              خصوصی
+            </MenuItem>
+            <MenuItem value="friend">
+              نمایش برای دوستان
+            </MenuItem>
+
+          </TextField>
+         </div>
+         </form>
         </Container>
       </Modal>
     </div>
