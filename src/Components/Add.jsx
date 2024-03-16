@@ -1,4 +1,10 @@
-import { Fab, Modal, Tooltip, Container, useTheme, TextField,MenuItem} from '@mui/material'
+import { 
+   Fab, Modal, Tooltip,
+   Container, useTheme, TextField,
+   MenuItem, FormLabel ,RadioGroup ,
+   FormControlLabel,Radio
+  } 
+from '@mui/material'
 import { Add as AddIcon } from '@mui/icons-material'
 import { useState } from 'react'
 
@@ -50,7 +56,9 @@ const Add = () => {
           variant="outlined" 
           style={{width:"100%"}}
           />
-          <TextField select label="نوع دسترسی">
+         </div>
+         <div>
+         <TextField select label="نوع دسترسی">
             <MenuItem value="public">
               عمومی
             </MenuItem>
@@ -62,6 +70,36 @@ const Add = () => {
             </MenuItem>
 
           </TextField>
+         </div>
+         <div>
+          <FormLabel id="demo-customized-radios">دسترسی کامنت گذاری</FormLabel>
+          <RadioGroup
+              defaultValue="female"
+              aria-labelledby="demo-customized-radios"
+              name="customized-radios"
+            >
+            <FormControlLabel 
+            value="everybody" 
+            control={<Radio size='small'/>} 
+            label="برای همه" 
+            />
+            <FormControlLabel 
+            value="friend "
+             control={<Radio size='small' />} 
+             label="برای دوستان"
+              />
+            <FormControlLabel 
+            value="nobody"
+             control={<Radio size='small' />} 
+             label="هیچکس" 
+             />
+            <FormControlLabel
+              value="سفارشی"
+              disabled
+              control={<Radio size='small'/>}
+              label="سفارشی (کاربران ویژه)"
+            />
+          </RadioGroup>
          </div>
          </form>
         </Container>
